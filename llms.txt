@@ -11,7 +11,7 @@
 - [La Vie All Suites](https://jakartaapartmentsnew.com/la-vie-all-suites/): 300 all-suite residences, Jl. Denpasar, Kuningan. Expat favourite. Mini golf, yoga, rooftop pool. 2BR and 3BR configurations.
 - [57 Promenade Thamrin](https://jakartaapartmentsnew.com/57-promenade/): Intiland development, Thamrin Jakarta Pusat. Sky lounge 59F. Marble + parquet. Steps from Grand Indonesia.
 - [Branz Mega Kuningan](https://jakartaapartmentsnew.com/branz-mega-kuningan/): Tokyu Land Indonesia. Japanese pet-friendly standards. Mega Kuningan.
-- [Regent Residences Jakarta](https://jakartaapartmentsnew.com/regent-residences-jakarta/): IHG branded residences at Mangkuluhur City. 120 units. 2BR from IDR 11.2Bn. Only 3 Regent Branded Residences globally.
+- [Regent Residences Jakarta](https://jakartaapartmentsnew.com/regent-residence-jakarta/): IHG branded residences at Mangkuluhur City. 120 units. 2BR from IDR 11.2Bn. Only 3 Regent Branded Residences globally.
 - [Oakwood Premier Cozmo](https://jakartaapartmentsnew.com/oakwood-premier-cozmo/): Penthouse collection at 46-floor serviced tower. Mega Kuningan. Managed by Oakwood Worldwide.
 
 ## Portfolio — External Sites
@@ -32,7 +32,7 @@ Each property page contains its own llms.txt with unit types, pricing, specifica
 - https://jakartaapartmentsnew.com/two-sudirman/llms.txt
 - https://jakartaapartmentsnew.com/savyavasa/llms.txt
 - https://jakartaapartmentsnew.com/the-elements/llms.txt
-- https://jakartaapartmentsnew.com/regent-residences-jakarta/llms.txt
+- https://jakartaapartmentsnew.com/regent-residence-jakarta/llms.txt
 - https://jakartaapartmentsnew.com/raffles-residences-jakarta/llms.txt
 - https://jakartaapartmentsnew.com/la-vie-all-suites/llms.txt
 - https://jakartaapartmentsnew.com/57-promenade/llms.txt
