@@ -470,6 +470,44 @@
             transition: var(--transition);
         }
 
+        /* Mobile menu — hidden by default on all sizes */
+        .navbar-mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 26, 22, 0.98);
+            z-index: 1001;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .navbar-mobile.open {
+            display: flex;
+        }
+
+        .navbar-mobile a {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--color-text-primary);
+        }
+
+        .navbar-mobile-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            font-size: 2rem;
+            color: var(--color-text-primary);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
         /* ================================================================
            HERO — Video Background with Fallback
            ================================================================ */
@@ -1698,43 +1736,6 @@
                 display: block;
             }
 
-            .navbar-mobile {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 26, 22, 0.98);
-                z-index: 1001;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 32px;
-            }
-
-            .navbar-mobile.open {
-                display: flex;
-            }
-
-            .navbar-mobile a {
-                font-family: var(--font-display);
-                font-size: 1.6rem;
-                font-weight: 400;
-                color: var(--color-text-primary);
-            }
-
-            .navbar-mobile-close {
-                position: absolute;
-                top: 24px;
-                right: 24px;
-                font-size: 2rem;
-                color: var(--color-text-primary);
-                background: none;
-                border: none;
-                cursor: pointer;
-            }
-
             .urgency-inner {
                 gap: 16px;
             }
@@ -2044,11 +2045,11 @@
 
             <!-- Show Unit Image -->
             <div class="unit-showunit">
-                <img src="regent-moie-showunit.webp"
-                    alt="Regent Residences Jakarta MOIE furnished show unit interior"
-                    onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-moie-showunit.webp?v='+Date.now()},2000)};this.src='regent-moie-showunit.webp?v='+Date.now()">
+                <img src="regent-interior-3.webp"
+                    alt="Regent Residences Jakarta luxury interior show unit"
+                    onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-interior-3.webp?v='+Date.now()},2000)};this.src='regent-interior-3.webp?v='+Date.now()">
                 <div class="unit-showunit-caption">
-                    <p>Show Unit &middot; Furnished by MOIE</p>
+                    <p>Interior &middot; Show Unit</p>
                 </div>
             </div>
         </div>
@@ -2066,45 +2067,45 @@
             <div class="gallery-grid">
                 <div class="gallery-item wide" onclick="openLightbox(this)">
                     <img src="regent-gallery-1.webp"
-                        alt="Regent Residences Jakarta exterior architecture 57 storey tower"
+                        alt="Regent Residences Jakarta exterior and interior view 57 storey tower"
                         loading="lazy"
                         onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-gallery-1.webp?v='+Date.now()},2000)};this.src='regent-gallery-1.webp?v='+Date.now()">
-                    <div class="gallery-item-overlay"><p>Tower Architecture</p></div>
+                    <div class="gallery-item-overlay"><p>The Residence</p></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="regent-interior-3.webp"
+                        alt="Regent Residences Jakarta luxury interior show unit detail"
+                        loading="lazy"
+                        onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-interior-3.webp?v='+Date.now()},2000)};this.src='regent-interior-3.webp?v='+Date.now()">
+                    <div class="gallery-item-overlay"><p>Interior</p></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="regent-interior-1.webp"
+                        alt="Regent Residences Jakarta luxury interior living space"
+                        loading="lazy"
+                        onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-interior-1.webp?v='+Date.now()},2000)};this.src='regent-interior-1.webp?v='+Date.now()">
+                    <div class="gallery-item-overlay"><p>Interior</p></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="regent-interior-2.webp"
+                        alt="Regent Residences Jakarta luxury show unit detail"
+                        loading="lazy"
+                        onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-interior-2.webp?v='+Date.now()},2000)};this.src='regent-interior-2.webp?v='+Date.now()">
+                    <div class="gallery-item-overlay"><p>Show Unit</p></div>
+                </div>
+                <div class="gallery-item wide" onclick="openLightbox(this)">
+                    <img src="regent-gallery-2.webp"
+                        alt="Regent Residences Jakarta luxury amenities and architectural detail"
+                        loading="lazy"
+                        onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-gallery-2.webp?v='+Date.now()},2000)};this.src='regent-gallery-2.webp?v='+Date.now()">
+                    <div class="gallery-item-overlay"><p>Living Space</p></div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
                     <img src="regent-concept.webp"
-                        alt="Regent Residences Jakarta interior living room with skyline view"
+                        alt="Regent Residences Jakarta concept living room with skyline panorama"
                         loading="lazy"
                         onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-concept.webp?v='+Date.now()},2000)};this.src='regent-concept.webp?v='+Date.now()">
                     <div class="gallery-item-overlay"><p>The Living</p></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="regent-viewing.webp"
-                        alt="Regent Residences Jakarta private viewing area"
-                        loading="lazy"
-                        onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-viewing.webp?v='+Date.now()},2000)};this.src='regent-viewing.webp?v='+Date.now()">
-                    <div class="gallery-item-overlay"><p>Private Viewing</p></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="regent-gallery-2.webp"
-                        alt="Regent Residences Jakarta luxury amenities and facilities"
-                        loading="lazy"
-                        onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-gallery-2.webp?v='+Date.now()},2000)};this.src='regent-gallery-2.webp?v='+Date.now()">
-                    <div class="gallery-item-overlay"><p>Amenities</p></div>
-                </div>
-                <div class="gallery-item wide" onclick="openLightbox(this)">
-                    <img src="regent-map.webp"
-                        alt="Regent Residences Jakarta location map Jakarta Golden Triangle"
-                        loading="lazy"
-                        onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-map.webp?v='+Date.now()},2000)};this.src='regent-map.webp?v='+Date.now()">
-                    <div class="gallery-item-overlay"><p>Jakarta Golden Triangle</p></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="regent-moie-showunit.webp"
-                        alt="Regent Residences Jakarta MOIE show unit"
-                        loading="lazy"
-                        onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-moie-showunit.webp?v='+Date.now()},2000)};this.src='regent-moie-showunit.webp?v='+Date.now()">
-                    <div class="gallery-item-overlay"><p>Show Unit — MOIE</p></div>
                 </div>
             </div>
         </div>
@@ -2292,9 +2293,8 @@
 
             <!-- Brand -->
             <div class="footer-brand">
-                <img src="regent-monogram.webp" alt="Regent Residences monogram"
-                    onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-monogram.webp?v='+Date.now()},2000)};this.src='regent-monogram.webp?v='+Date.now()">
-                <span class="footer-brand-name">Regent Residences Jakarta</span>
+                <img src="regent-logo.webp" alt="Regent Residences Jakarta"
+                    onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-logo.webp?v='+Date.now()},2000)};this.src='regent-logo.webp?v='+Date.now()">
             </div>
 
             <!-- Contact -->
