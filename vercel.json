@@ -47,7 +47,7 @@
   ],
   "redirects": [
     { "source": "/index.php/two-sudirman-jakarta-private-residence-by-mitsubishi-estate-the-tallest-apartment-in-indonesia/", "destination": "/two-sudirman/", "statusCode": 301 },
-    { "source": "/index.php/regent-residence-jakarta-by-intercontinental/", "destination": "https://regent-jakarta.co/", "statusCode": 301 },
+    { "source": "/index.php/regent-residence-jakarta-by-intercontinental/", "destination": "/regent-residences-jakarta/", "statusCode": 301 },
     { "source": "/index.php/apartemen-verde-two-kuningan-jakarta-selatan-pet-friendly-penthouse-available/", "destination": "https://verde2apartment.com/", "statusCode": 301 },
     { "source": "/index.php/branz-mega-kuningan-jakarta-selatan-pet-friendly-free-ppn/", "destination": "/branz-mega-kuningan/", "statusCode": 301 },
     { "source": "/index.php/savyavasa-apartment-at-dharmawangsa-private-compound-dengan-hutan-kota-jakarta-selatan/", "destination": "/savyavasa/", "statusCode": 301 },
