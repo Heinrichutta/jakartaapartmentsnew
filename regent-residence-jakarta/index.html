@@ -87,7 +87,7 @@
                 },
                 "publisher": { "@id": "https://jakartaapartmentsnew.com/#organization" },
                 "datePublished": "2026-06-03",
-                "dateModified": "2026-06-03",
+                "dateModified": "2026-09-15",
                 "mainEntityOfPage": "https://jakartaapartmentsnew.com/index.php/regent-residence-jakarta-by-intercontinental/",
                 "image": "https://jakartaapartmentsnew.com/wp-content/uploads/regent-hero-fallback.webp"
             },
@@ -113,7 +113,7 @@
                 "@type": "RealEstateListing",
                 "@id": "https://jakartaapartmentsnew.com/index.php/regent-residence-jakarta-by-intercontinental/#listing",
                 "name": "Regent Residences Jakarta",
-                "description": "57-storey branded luxury residence by KG Global Developments, managed by Regent Hotels & Resorts under Intercontinental Hotels Group (IHG). One of only 3 Regent Branded Residences globally. Unit types: Grand Penthouse 1014 sqm with pool (price upon request), Penthouse 536 sqm (IDR 39 Billion), 3BR 251 sqm furnished by Magran Living (IDR 21 Billion), 2BR 99-101 sqm (IDR 6.6 Billion). IHG Diamond Elite membership from day one. Jakarta Golden Triangle.",
+                "description": "57-storey branded luxury residence by KG Global Developments, managed by Regent Hotels & Resorts under Intercontinental Hotels Group (IHG). One of only 3 Regent Branded Residences globally. Unit types: Grand Penthouse 1014 sqm with pool (price upon request), Penthouse 536 sqm (IDR 39 Billion), 3BR 251 sqm furnished by Magran Living (IDR 21 Billion), 2BR 168 sqm (IDR 11.2 Billion), 2BR 99-101 sqm (IDR 6.6 Billion). Complimentary Bentley limousine service. IHG Diamond Elite membership from day one. Jakarta Golden Triangle.",
                 "url": "https://jakartaapartmentsnew.com/index.php/regent-residence-jakarta-by-intercontinental/",
                 "image": "https://jakartaapartmentsnew.com/wp-content/uploads/regent-hero-fallback.webp",
                 "address": {
@@ -144,7 +144,7 @@
                         "name": "What is the price of Regent Residences Jakarta?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Regent Residences Jakarta prices start from IDR 6.6 Billion for 2BR (99-101 sqm), IDR 21 Billion for 3BR (251 sqm) furnished by Magran Living, IDR 39 Billion for Penthouse (536 sqm). The Grand Penthouse (1014 sqm with private pool, 1 unit remaining) is priced upon request."
+                            "text": "Regent Residences Jakarta prices start from IDR 6.6 Billion for 2BR (99-101 sqm), IDR 11.2 Billion for 2BR (168 sqm), IDR 21 Billion for 3BR (251 sqm) furnished by Magran Living, IDR 39 Billion for Penthouse (536 sqm). The Grand Penthouse (1014 sqm with private pool, 1 unit remaining) is priced upon request."
                         }
                     },
                     {
@@ -176,7 +176,7 @@
                         "name": "What unit types are available at Regent Residences Jakarta?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Regent Residences Jakarta offers 4 unit types: Grand Penthouse (1014 sqm with private pool, price upon request, 1 unit left), Penthouse (536 sqm, IDR 39 Billion), 3BR (251 sqm, furnished by Magran Living, IDR 21 Billion), and 2BR (99-101 sqm, IDR 6.6 Billion)."
+                            "text": "Regent Residences Jakarta offers 5 unit types: Grand Penthouse (1014 sqm with private pool, price upon request, 1 unit left), Penthouse (536 sqm, IDR 39 Billion), 3BR (251 sqm, furnished by Magran Living, IDR 21 Billion), 2BR (168 sqm, IDR 11.2 Billion), and 2BR (99-101 sqm, IDR 6.6 Billion)."
                         }
                     },
                     {
@@ -353,6 +353,61 @@
             font-size: clamp(1.6rem, 3vw, 2.4rem);
             font-weight: 600;
             color: var(--color-gold);
+        }
+
+        /* ================================================================
+           MOBILE BREADCRUMB NAV — horizontal scrollable quick-nav
+           ================================================================ */
+
+        .mobile-breadcrumb {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: rgba(0, 26, 22, 0.96);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--color-border);
+            padding: 0 16px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            transform: translateY(-100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mobile-breadcrumb::-webkit-scrollbar {
+            display: none;
+        }
+
+        .mobile-breadcrumb.visible {
+            transform: translateY(0);
+        }
+
+        .mobile-breadcrumb a {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.55rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--color-text-secondary);
+            padding: 14px 12px;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .mobile-breadcrumb a.active {
+            color: var(--color-gold);
+            border-bottom: 1.5px solid var(--color-gold);
+        }
+
+        .mobile-breadcrumb a:hover {
+            color: var(--color-text-primary);
         }
 
         /* ================================================================
@@ -1728,6 +1783,10 @@
         }
 
         @media (max-width: 768px) {
+            .mobile-breadcrumb {
+                display: block;
+            }
+
             .navbar-links {
                 display: none;
             }
@@ -1764,6 +1823,7 @@
         @media (max-width: 420px) {
             .navbar {
                 padding: 16px 20px;
+                top: 0;
             }
 
             .navbar.scrolled {
@@ -1792,6 +1852,21 @@
 </head>
 
 <body>
+
+    <!-- ================================================================
+         MOBILE BREADCRUMB — horizontal scroll quick-nav (mobile only)
+         ================================================================ -->
+    <div class="mobile-breadcrumb" id="mobileBreadcrumb">
+        <a href="#hero">Home</a>
+        <a href="#concept">Concept</a>
+        <a href="#films">Films</a>
+        <a href="#virtual-tour">Tour</a>
+        <a href="#residences">Residences</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://wa.me/6281882888199?text=Hello,%20I%20would%20like%20to%20schedule%20the%20exclusive%20unit%20tour%20at%20Regent%20Residence%20Jakarta" target="_blank" rel="noopener" style="color:var(--color-gold);">Viewing ↗</a>
+    </div>
 
     <!-- ================================================================
          NAVBAR
@@ -1837,9 +1912,9 @@
          ================================================================ -->
     <section class="hero" id="hero">
         <div class="hero-media">
-            <img class="hero-image" src="regent-hero-fallback.webp"
-                alt="Regent Residences Jakarta — 57 storey branded luxury residence in Jakarta Golden Triangle"
-                onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-hero-fallback.webp?v='+Date.now()},2000)};this.src='regent-hero-fallback.webp?v='+Date.now()">
+            <img class="hero-image" src="regent-pool-hero.webp"
+                alt="Regent Residences Jakarta private pool with panoramic Jakarta skyline — 57 storey branded luxury residence"
+                onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-pool-hero.webp?v='+Date.now()},2000)};this.src='regent-pool-hero.webp?v='+Date.now()">
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -1875,7 +1950,7 @@
          ================================================================ -->
     <div class="bluf-layer">
         <p class="bluf-text">
-            Regent Residences Jakarta is a 57-storey branded luxury residence developed by KG Global Developments, managed by Regent Hotels & Resorts under Intercontinental Hotels Group (IHG). One of only 3 Regent Branded Residences globally. Located in the Jakarta Golden Triangle. Unit types: Grand Penthouse 1014 sqm with private pool (price upon request, 1 unit remaining), Penthouse 536 sqm (IDR 39 Billion), 3BR 251 sqm furnished by Magran Living (IDR 21 Billion), 2BR 99/101 sqm (IDR 6.6 Billion). Select units furnished by MOIE. IHG Diamond Elite membership from day one for all owners. 3BR show unit furnished by Magran Living. Double private lifts in penthouse units.
+            Regent Residences Jakarta is a 57-storey branded luxury residence developed by KG Global Developments, managed by Regent Hotels & Resorts under Intercontinental Hotels Group (IHG). One of only 3 Regent Branded Residences globally. Located in the Jakarta Golden Triangle. Unit types: Grand Penthouse 1014 sqm with private pool (price upon request, 1 unit remaining), Penthouse 536 sqm (IDR 39 Billion), 3BR 251 sqm furnished by Magran Living (IDR 21 Billion), 2BR 168 sqm (IDR 11.2 Billion), 2BR 99/101 sqm (IDR 6.6 Billion). Complimentary Bentley limousine service within 10 km radius. Select units furnished by MOIE. IHG Diamond Elite membership from day one for all owners. 3BR show unit furnished by Magran Living. Double private lifts in penthouse units.
         </p>
     </div>
 
@@ -2013,27 +2088,71 @@
                         <p class="unit-note">The singular residence. Private pool, double private lift, bespoke configuration.</p>
                         <p class="price-display">Upon Request</p>
                     </div>
-                    <div class="concept-image-wrap" style="aspect-ratio:4/3; background:linear-gradient(135deg, var(--color-bg-deep), var(--color-regent-teal));">
+                    <div class="concept-image-wrap" style="aspect-ratio:4/3; overflow:hidden;">
+                        <img src="regent-pool-hero.webp"
+                            alt="Regent Residences Jakarta Grand Penthouse private infinity pool with Jakarta skyline"
+                            style="width:100%; height:100%; object-fit:cover; transition:transform 1s ease;"
+                            onmouseover="this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.transform='scale(1)'"
+                            onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-pool-hero.webp?v='+Date.now()},2000)};this.src='regent-pool-hero.webp?v='+Date.now()">
                     </div>
                 </div>
 
                 <!-- Penthouse -->
-                <div class="unit-card">
-                    <h3>Penthouse</h3>
-                    <p class="unit-size">536 sqm</p>
-                    <p class="unit-note">Full-floor presence. Commanding Jakarta skyline.</p>
-                    <p class="price-display">IDR 39 Billion</p>
+                <div class="unit-card featured">
+                    <div>
+                        <h3>Penthouse</h3>
+                        <p class="unit-size">536 sqm</p>
+                        <p class="unit-note">Full-floor presence. Commanding Jakarta skyline.</p>
+                        <p class="price-display">IDR 39 Billion</p>
+                    </div>
+                    <div class="concept-image-wrap" style="aspect-ratio:4/3; overflow:hidden;">
+                        <img src="regent-pool-hero.webp"
+                            alt="Regent Residences Jakarta Penthouse private pool overlooking Jakarta Golden Triangle"
+                            style="width:100%; height:100%; object-fit:cover; transition:transform 1s ease;"
+                            onmouseover="this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.transform='scale(1)'"
+                            onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-pool-hero.webp?v='+Date.now()},2000)};this.src='regent-pool-hero.webp?v='+Date.now()">
+                    </div>
                 </div>
 
                 <!-- 3 BR -->
-                <div class="unit-card">
-                    <h3>3 Bedroom</h3>
-                    <p class="unit-size">251 sqm</p>
-                    <p class="unit-note">Furnished by Magran Living</p>
-                    <p class="price-display">IDR 21 Billion</p>
+                <div class="unit-card featured">
+                    <div>
+                        <h3>3 Bedroom</h3>
+                        <p class="unit-size">251 sqm</p>
+                        <p class="unit-note">Furnished by Magran Living</p>
+                        <p class="price-display">IDR 21 Billion</p>
+                    </div>
+                    <div class="concept-image-wrap" style="aspect-ratio:4/3; overflow:hidden;">
+                        <img src="regent-3br-bathroom.webp"
+                            alt="Regent Residences Jakarta 3 Bedroom bathroom with freestanding bathtub and Jakarta skyline view"
+                            style="width:100%; height:100%; object-fit:cover; transition:transform 1s ease;"
+                            onmouseover="this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.transform='scale(1)'"
+                            onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-3br-bathroom.webp?v='+Date.now()},2000)};this.src='regent-3br-bathroom.webp?v='+Date.now()">
+                    </div>
                 </div>
 
-                <!-- 2 BR -->
+                <!-- 2 BR — 168 sqm -->
+                <div class="unit-card featured">
+                    <div>
+                        <h3>2 Bedroom</h3>
+                        <p class="unit-size">168 sqm</p>
+                        <p class="unit-note">Regent hospitality at your doorstep. Limousine service within 10 km radius.</p>
+                        <p class="price-display">IDR 11,2 Billion</p>
+                    </div>
+                    <div class="concept-image-wrap" style="aspect-ratio:4/3; overflow:hidden;">
+                        <img src="regent-limousine-service.webp"
+                            alt="Regent Residences Jakarta Bentley limousine service — complimentary 10 km radius transportation"
+                            style="width:100%; height:100%; object-fit:cover; transition:transform 1s ease;"
+                            onmouseover="this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.transform='scale(1)'"
+                            onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-limousine-service.webp?v='+Date.now()},2000)};this.src='regent-limousine-service.webp?v='+Date.now()">
+                    </div>
+                </div>
+
+                <!-- 2 BR — 99/101 sqm -->
                 <div class="unit-card" style="grid-column: span 2;">
                     <h3>2 Bedroom</h3>
                     <p class="unit-size">99 / 101 sqm</p>
@@ -2107,6 +2226,27 @@
                         onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-concept.webp?v='+Date.now()},2000)};this.src='regent-concept.webp?v='+Date.now()">
                     <div class="gallery-item-overlay"><p>The Living</p></div>
                 </div>
+                <div class="gallery-item wide" onclick="openLightbox(this)">
+                    <img src="regent-showunit-living.webp"
+                        alt="Regent Residences Jakarta show unit living room with Jakarta CBD skyline view"
+                        loading="lazy"
+                        onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-showunit-living.webp?v='+Date.now()},2000)};this.src='regent-showunit-living.webp?v='+Date.now()">
+                    <div class="gallery-item-overlay"><p>Show Unit — Living</p></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="regent-showunit-kitchen.webp"
+                        alt="Regent Residences Jakarta show unit kitchen with integrated appliances"
+                        loading="lazy"
+                        onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-showunit-kitchen.webp?v='+Date.now()},2000)};this.src='regent-showunit-kitchen.webp?v='+Date.now()">
+                    <div class="gallery-item-overlay"><p>Show Unit — Kitchen</p></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="regent-3br-bathtub-view.webp"
+                        alt="Regent Residences Jakarta bathtub with panoramic Jakarta skyline view"
+                        loading="lazy"
+                        onerror="this.onerror=function(){var i=this;setTimeout(function(){i.src='regent-3br-bathtub-view.webp?v='+Date.now()},2000)};this.src='regent-3br-bathtub-view.webp?v='+Date.now()">
+                    <div class="gallery-item-overlay"><p>Bathtub — Skyline View</p></div>
+                </div>
             </div>
         </div>
     </section>
@@ -2160,7 +2300,7 @@
                 </button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        Regent Residences Jakarta prices start from IDR 6.6 Billion for the 2 Bedroom unit (99/101 sqm). The 3 Bedroom (251 sqm), furnished by Magran Living, is priced at IDR 21 Billion. The Penthouse (536 sqm) is IDR 39 Billion. The Grand Penthouse (1014 sqm with private pool, 1 unit remaining) is priced upon request.
+                        Regent Residences Jakarta prices start from IDR 6.6 Billion for the 2 Bedroom unit (99/101 sqm). The 2 Bedroom 168 sqm is priced at IDR 11.2 Billion. The 3 Bedroom (251 sqm), furnished by Magran Living, is priced at IDR 21 Billion. The Penthouse (536 sqm) is IDR 39 Billion. The Grand Penthouse (1014 sqm with private pool, 1 unit remaining) is priced upon request.
                     </div>
                 </div>
             </div>
@@ -2208,7 +2348,7 @@
                 </button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        Four unit types are available: Grand Penthouse (1014 sqm with private pool, price upon request, 1 unit remaining), Penthouse (536 sqm, IDR 39 Billion), 3 Bedroom (251 sqm, furnished by Magran Living, IDR 21 Billion), and 2 Bedroom (99/101 sqm, IDR 6.6 Billion).
+                        Five unit types are available: Grand Penthouse (1014 sqm with private pool, price upon request, 1 unit remaining), Penthouse (536 sqm, IDR 39 Billion), 3 Bedroom (251 sqm, furnished by Magran Living, IDR 21 Billion), 2 Bedroom (168 sqm, IDR 11.2 Billion), and 2 Bedroom (99/101 sqm, IDR 6.6 Billion).
                     </div>
                 </div>
             </div>
@@ -2468,6 +2608,54 @@
                 }
             });
         });
+
+        /* ---- Mobile Breadcrumb: show on scroll + active section ---- */
+        (function() {
+            const bc = document.getElementById('mobileBreadcrumb');
+            if (!bc) return;
+
+            // Show breadcrumb after scrolling past hero
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > window.innerHeight * 0.6) {
+                    bc.classList.add('visible');
+                } else {
+                    bc.classList.remove('visible');
+                }
+            });
+
+            // Track active section
+            const bcLinks = bc.querySelectorAll('a[href^="#"]');
+            const sections = [];
+            bcLinks.forEach(function(link) {
+                var id = link.getAttribute('href').substring(1);
+                var el = document.getElementById(id);
+                if (el) sections.push({ el: el, link: link });
+            });
+
+            var ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        var scrollPos = window.scrollY + 120;
+                        var active = null;
+                        for (var i = sections.length - 1; i >= 0; i--) {
+                            if (sections[i].el.offsetTop <= scrollPos) {
+                                active = sections[i];
+                                break;
+                            }
+                        }
+                        bcLinks.forEach(function(l) { l.classList.remove('active'); });
+                        if (active) {
+                            active.link.classList.add('active');
+                            // Auto-scroll breadcrumb to active item
+                            active.link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        })();
     </script>
 
 </body>
