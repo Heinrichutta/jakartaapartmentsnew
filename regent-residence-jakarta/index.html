@@ -1761,8 +1761,12 @@
             }
 
             .unit-card.featured {
-                grid-column: span 1;
+                grid-column: span 1 !important;
                 grid-template-columns: 1fr;
+            }
+
+            .unit-card[style*="grid-column"] {
+                grid-column: span 1 !important;
             }
 
             .tour-grid {
@@ -1795,6 +1799,14 @@
                 display: block;
             }
 
+            .navbar {
+                padding: 16px 20px;
+            }
+
+            .navbar.scrolled {
+                padding: 12px 20px;
+            }
+
             .urgency-inner {
                 gap: 16px;
             }
@@ -1815,23 +1827,21 @@
                 grid-column: span 1;
             }
 
+            .hero {
+                min-height: 500px;
+            }
+
             .hero h1 {
-                font-size: clamp(2rem, 8vw, 3rem);
-            }
-        }
-
-        @media (max-width: 420px) {
-            .navbar {
-                padding: 16px 20px;
-                top: 0;
-            }
-
-            .navbar.scrolled {
-                padding: 12px 20px;
+                font-size: clamp(1.6rem, 7vw, 2.5rem);
             }
 
             .hero-content {
-                padding: 0 20px 60px;
+                padding: 0 20px 48px;
+            }
+
+            .hero-sub {
+                font-size: 0.85rem;
+                max-width: 100%;
             }
 
             .hero-cta {
@@ -1839,13 +1849,57 @@
                 font-size: 0.6rem;
             }
 
+            h2 {
+                font-size: clamp(1.4rem, 5vw, 2rem) !important;
+            }
+
             .unit-card {
                 padding: 24px;
+            }
+
+            .unit-card.featured {
+                gap: 24px;
+            }
+
+            .unit-card .concept-image-wrap {
+                aspect-ratio: 16/9 !important;
             }
 
             .footer-links {
                 flex-direction: column;
                 gap: 12px;
+            }
+
+            .concept-stats {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .navbar-logo img,
+            .navbar-logo svg {
+                height: 28px;
+            }
+
+            .hero {
+                min-height: 450px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .unit-card {
+                padding: 20px;
+            }
+
+            .unit-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .price-display {
+                font-size: 1.2rem !important;
             }
         }
     </style>
@@ -2153,7 +2207,7 @@
                 </div>
 
                 <!-- 2 BR — 99/101 sqm -->
-                <div class="unit-card" style="grid-column: span 2;">
+                <div class="unit-card featured">
                     <h3>2 Bedroom</h3>
                     <p class="unit-size">99 / 101 sqm</p>
                     <p class="unit-note">The Regent entry point. Every amenity, every privilege — same address.</p>
