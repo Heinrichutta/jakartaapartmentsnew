@@ -289,14 +289,47 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+    z-index: 101;
 }
 
 .mobile-toggle span {
     display: block;
     width: 100%;
-    height: 2px;
-    background: var(--ink);
+    height: 2.5px;
+    background: #1A2B40;
+    border-radius: 2px;
     transition: var(--transition);
+}
+
+/* Mobile nav overlay */
+.nav-menu.mobile-open {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    background: rgba(247,243,230,0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 80px 24px 40px;
+    gap: 12px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 100;
+    animation: mobileMenuIn 0.3s ease-out;
+}
+
+@keyframes mobileMenuIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-menu.mobile-open a {
+    font-size: 1.05rem;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,86,161,0.08);
 }
 
 /* ============================================
@@ -2578,6 +2611,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
             <div class="footer-col">
                 <h4>Other Markets</h4>
                 <ul>
+                    <li><a href="https://berjayapropertiesjakarta.com" target="_blank" rel="noopener">berjayapropertiesjakarta.com</a></li>
                     <li><a href="#enquiry">Advisory Enquiry</a></li>
                     <li><a href="#subsale">Subsale · Secondary</a></li>
                     <li><a href="#articles">Insights</a></li>
@@ -2667,17 +2701,9 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 const mobileToggle = document.getElementById('mobileToggle');
 const navMenu = document.querySelector('.nav-menu');
 mobileToggle?.addEventListener('click', () => {
-    navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-    if (window.innerWidth <= 768 && navMenu.style.display === 'flex') {
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '100%';
-        navMenu.style.left = '0';
-        navMenu.style.right = '0';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.background = getComputedStyle(document.documentElement).getPropertyValue('--dark-bg') || '#000';
-        navMenu.style.padding = '24px';
-        navMenu.style.gap = '20px';
-    }
+    navMenu.classList.toggle('mobile-open');
+    // Reset inline styles that may have been set previously
+    navMenu.style.cssText = '';
 });
 
 // GLOBE
